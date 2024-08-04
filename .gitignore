@@ -484,4 +484,3 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 .vscode/settings.json
-API/reactivities.db

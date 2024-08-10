@@ -13,6 +13,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(opt=>{
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+//Adding Cors Policy for API allowance
+builder.Services.AddCors(opt =>{
+    opt.AddPolicy("CorsPolicy", policy => {
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+    });
+});
 
 var app = builder.Build();
 
@@ -24,7 +30,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
+app.UseCors("CorsPolicy");
 app.MapControllers();
 
 //database connection

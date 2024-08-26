@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain;
 using Application.Activities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
@@ -12,6 +13,8 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new List.Query())); //Getting all data
         }
 
+
+        [Authorize]
         [HttpGet("{id}")] //api/activities/fdfkdffdfd
         public async Task<IActionResult> GetActivity(Guid id){
 

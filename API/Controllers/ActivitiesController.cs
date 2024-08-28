@@ -7,6 +7,7 @@ namespace API.Controllers
 {
     public class ActivitiesController : BaseApiController
     {
+        [AllowAnonymous]
 
         [HttpGet] //api/activities
         public async Task<IActionResult> GetActivities(){

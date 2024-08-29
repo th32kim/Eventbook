@@ -76,8 +76,7 @@ namespace API.Controllers
 
         private UserDto CreateUserObject(AppUser user)
         {
-            return new UserDto
-            {
+            return new UserDto{
                 DisplayName = user.DisplayName,
                 Image = null,
                 Token = _tokenService.CreateToken(user),

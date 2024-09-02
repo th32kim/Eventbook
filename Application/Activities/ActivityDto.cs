@@ -1,3 +1,4 @@
+using Application.Activities;
 using Application.Profiles;
 
 namespace Domain
@@ -13,6 +14,6 @@ namespace Domain
         public string Venue {get; set;}
         public string HostUsername {get; set;}
         public bool IsCancelled {get; set;}
-        public ICollection<Profile> Attendees {get; set;}
+        public ICollection<AttendeeDto> Attendees {get; set;}
     }
 }

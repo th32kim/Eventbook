@@ -13,7 +13,7 @@ export interface IActivity {
     isGoing:boolean;
     isHost: boolean;
     host?: Profile;
-    attendees?: Profile[]
+    attendees: Profile[]
   }
 
   export class Activity implements IActivity{
@@ -38,7 +38,7 @@ export interface IActivity {
     isGoing:boolean=false
     isHost: boolean=false
     host?: Profile;
-    attendees?: Profile[]
+    attendees: Profile[] = [];
 
   }
 
